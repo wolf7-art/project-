@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>生活選物｜生活提案</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <script src="js/main.js" defer></script>
+  </head>
+  <body data-page="journal">
+    <!-- 全站頁首 -->
+    <header class="site-header site-header--default">
+      <div class="site-header__inner">
+        <a class="site-logo" href="index.html" aria-label="返回首頁">LOGO</a>
+        <nav class="primary-navigation" id="primary-navigation" aria-label="主要導覽">
+          <ul class="primary-navigation__list">
+            <li><a class="primary-navigation__link" href="index.html">Home</a></li>
+            <li><a class="primary-navigation__link" href="products.html">Product Gallery</a></li>
+            <li><a class="primary-navigation__link" href="journal.html" aria-current="page">Journal List</a></li>
+            <li><a class="primary-navigation__link" href="article.html">Article Detail</a></li>
+          </ul>
+        </nav>
+        <button class="header-search" type="button" aria-controls="site-search-panel" aria-expanded="false" data-search-toggle>
+          <img src="assets/icons/search.svg" alt="">
+          <span>Search</span>
+        </button>
+        <button class="mobile-menu-toggle" type="button" aria-label="開啟導覽選單" aria-controls="primary-navigation" aria-expanded="false" data-menu-toggle>
+          <span class="mobile-menu-toggle__line"></span>
+          <span class="mobile-menu-toggle__line"></span>
+          <span class="mobile-menu-toggle__line"></span>
+        </button>
+      </div>
+    </header>
+
+    <!-- 站內搜尋面板 -->
+    <form class="site-search" id="site-search-panel" role="search" aria-label="站內搜尋" data-search-form hidden>
+      <div class="site-search__header">
+        <h2 class="site-search__title">搜尋生活選物</h2>
+        <button class="site-search__close" type="button" aria-label="關閉搜尋" data-search-close>×</button>
+      </div>
+      <label class="site-search__label" for="site-search-input">輸入關鍵字</label>
+      <input class="site-search__input" id="site-search-input" type="search" placeholder="例如：香氛、茶器、書寫" autocomplete="off" data-search-input>
+      <p class="site-search__summary" aria-live="polite" data-search-summary>可搜尋 0 項內容</p>
+    </form>
+
+    <main class="page-shell journal-page">
+      <!-- 搜尋沒有符合內容時顯示完整空結果狀態。 -->
+      <section class="search-empty-page" aria-labelledby="site-search-empty-title" data-search-empty-page hidden>
+        <div class="search-empty-page__content">
+          <h1 class="search-empty-page__title" id="site-search-empty-title">找不到符合條件的選物</h1>
+          <p>試著調整搜尋關鍵字，或瀏覽其他生活提案。</p>
+        </div>
+      </section>
+
+      <!-- 生活提案頁主視覺 -->
+      <section class="page-hero page-hero--compact" aria-labelledby="journal-hero-title">
+        <img src="assets/images/journal/journal-hero.jpg" alt="手持咖啡杯、沐浴在陽光中的居家空間">
+        <div class="container page-hero__caption page-hero__caption--light">
+          <h1 id="journal-hero-title">把日子過成喜歡的模樣</h1>
+          <p>從器物、香氣到生活習慣，每個選擇都在塑造理想日常。</p>
+        </div>
+      </section>
+
+      <!-- 生活提案文章列表 -->
+      <section class="page-section" aria-label="生活提案專欄">
+        <div class="container page-section__inner">
+          <div class="journal-list">
+            <a class="article-card article-card--interactive journal-lead-card" href="article.html" data-search-item>
+              <div class="journal-lead-card__media media">
+                <img src="assets/images/journal/journal-focus-writing.jpg" alt="攤開的筆記本、黃銅鋼筆與綠葉">
+              </div>
+              <div class="product-card__content journal-lead-card__content">
+                <h2 class="product-card__title">【專注】在紙上，找回思考的節奏</h2>
+                <p class="product-card__subtitle">讓書寫成為與自己對話的留白時刻。</p>
+                <p class="product-card__description">在快速切換的資訊洪流裡，一本筆記本與一支順手的筆，能讓思緒慢慢沉澱。記錄靈感、整理想法，也收藏那些容易被忽略的日常片段。</p>
+              </div>
+            </a>
+
+            <article class="article-card article-card--interactive journal-split-card" data-search-item>
+              <div class="journal-split-card__media media">
+                <img src="assets/images/journal/journal-warm-table.jpg" alt="燭光餐桌上的餐盤、酒杯與花材">
+              </div>
+              <div class="journal-split-card__content">
+                <div class="journal-split-card__text">
+                  <h2 class="journal-split-card__title">【溫度】把平凡的一餐，好好享用</h2>
+                  <p class="journal-split-card__subtitle">器皿的存在，讓用餐成為一種生活儀式。</p>
+                  <p class="journal-split-card__description">不需要特別的節日，也值得認真對待每一次用餐。選擇喜歡的餐盤與杯器，讓簡單的料理多一份溫度，讓忙碌的生活多一點從容。</p>
+                </div>
+                <a class="text-link text-link--figma" href="article.html">
+                  <span class="text-link__label">Read More</span>
+                  <img class="text-link__line" src="assets/icons/read-more-line.svg" alt="" aria-hidden="true">
+                  <img class="text-link__arrow" src="assets/icons/read-more-arrow.svg" alt="" aria-hidden="true">
+                </a>
+              </div>
+            </article>
+
+            <article class="article-card article-card--interactive journal-split-card journal-split-card--reverse" data-search-item>
+              <div class="journal-split-card__media media">
+                <img src="assets/images/journal/journal-quiet-scent.jpg" alt="桌上的香氛蠟燭、花束與咖啡杯">
+              </div>
+              <div class="journal-split-card__content">
+                <div class="journal-split-card__text">
+                  <h2 class="journal-split-card__title">【靜謐】用香氣劃定家的邊界</h2>
+                  <p class="journal-split-card__subtitle">尋找專屬你的回巢感，讓疲憊悄然消散。</p>
+                  <p class="journal-split-card__description">木質調的沉穩、茶香的溫潤或草本植物的清新，都能悄悄改變空間氛圍。透過香氣的陪伴，讓家成為真正能放鬆身心的地方。</p>
+                </div>
+                <a class="text-link text-link--figma" href="article.html">
+                  <span class="text-link__label">Read More</span>
+                  <img class="text-link__line" src="assets/icons/read-more-line.svg" alt="" aria-hidden="true">
+                  <img class="text-link__arrow" src="assets/icons/read-more-arrow.svg" alt="" aria-hidden="true">
+                </a>
+              </div>
+            </article>
+
+            <article class="article-card article-card--interactive journal-split-card" data-search-item>
+              <div class="journal-split-card__media media">
+                <img src="assets/images/journal/journal-simple-space.jpg" alt="簡潔空間中的木桌、收納籃與日常器物">
+              </div>
+              <div class="journal-split-card__content">
+                <div class="journal-split-card__text">
+                  <h2 class="journal-split-card__title">【留白】讓空間回歸簡單與純粹</h2>
+                  <p class="journal-split-card__subtitle">當視線變得乾淨，心也跟著安定下來。</p>
+                  <p class="journal-split-card__description">收納不只是整理物品，更是一種整理生活的方式。透過簡約實用的小物，讓日常空間保有呼吸感，也讓生活多一些自在與餘裕。</p>
+                </div>
+                <a class="text-link text-link--figma" href="article.html">
+                  <span class="text-link__label">Read More</span>
+                  <img class="text-link__line" src="assets/icons/read-more-line.svg" alt="" aria-hidden="true">
+                  <img class="text-link__arrow" src="assets/icons/read-more-arrow.svg" alt="" aria-hidden="true">
+                </a>
+              </div>
+            </article>
+
+            <article class="article-card article-card--interactive journal-split-card journal-split-card--reverse" data-search-item>
+              <div class="journal-split-card__media media">
+                <img src="assets/images/journal/journal-morning-habit.jpg" alt="晨光中的茶杯、書本與床邊空間">
+              </div>
+              <div class="journal-split-card__content">
+                <div class="journal-split-card__text">
+                  <h2 class="journal-split-card__title">【晨曦】從第一個小習慣開始</h2>
+                  <p class="journal-split-card__subtitle">每一天的開始，都值得被溫柔對待。</p>
+                  <p class="journal-split-card__description">一杯熱茶、一段閱讀時光，或是簡單整理桌面，都是迎接新一天的方式。透過微小卻穩定的儀式感，慢慢建立屬於自己的生活節奏。</p>
+                </div>
+                <a class="text-link text-link--figma" href="article.html">
+                  <span class="text-link__label">Read More</span>
+                  <img class="text-link__line" src="assets/icons/read-more-line.svg" alt="" aria-hidden="true">
+                  <img class="text-link__arrow" src="assets/icons/read-more-arrow.svg" alt="" aria-hidden="true">
+                </a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 全站頁尾 -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__brand">
+          <a class="site-footer__logo" href="index.html" aria-label="返回首頁">LOGO</a>
+          <div class="site-footer__socials">
+            <a class="site-footer__social-link" href="#" aria-label="Facebook">
+              <img src="assets/icons/facebook.png" alt="">
+            </a>
+            <a class="site-footer__social-link" href="#" aria-label="Instagram">
+              <img src="assets/icons/instagram.png" alt="">
+            </a>
+            <a class="site-footer__social-link" href="#" aria-label="LINE">
+              <img src="assets/icons/line.png" alt="">
+            </a>
+          </div>
+        </div>
+        <nav class="site-footer__links" aria-label="頁尾資訊">
+          <div class="site-footer__column"><a class="site-footer__link" href="index.html#brand-story-title">關於我們</a><a class="site-footer__link" href="journal.html">生活提案</a><a class="site-footer__link" href="mailto:hello@example.com">聯繫我們</a></div>
+          <div class="site-footer__column"><a class="site-footer__link" href="journal.html">最新消息</a><a class="site-footer__link" href="journal.html">活動特集</a><a class="site-footer__link" href="products.html">購物說明</a></div>
+          <div class="site-footer__column"><a class="site-footer__link" href="index.html">加入會員</a><a class="site-footer__link" href="index.html">會員權益</a><a class="site-footer__link" href="index.html">常見問題</a></div>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

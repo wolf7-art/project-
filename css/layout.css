@@ -1,0 +1,1174 @@
+/* 共用頁面版型 */
+.page-shell {
+  min-height: 760px;
+}
+
+/* 搜尋提交後的完整空結果狀態 */
+[data-search-item][hidden] {
+  display: none;
+}
+
+.search-empty-page {
+  display: flex;
+  min-height: calc(100svh - 100px - 187px - var(--space-section));
+  padding: 80px 24px 0;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.search-empty-page[hidden] {
+  display: none;
+}
+
+.search-empty-page__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: min(480px, 100%);
+  color: var(--color-charcoal);
+  font-size: var(--font-h3);
+  line-height: 1;
+}
+
+.search-empty-page__title {
+  font: inherit;
+}
+
+.is-search-empty .page-shell {
+  min-height: 0;
+}
+
+.is-search-empty .page-shell > :not(.search-empty-page),
+.is-search-empty.home-page main > :not(.home-hero):not(.search-empty-page),
+.is-search-empty.home-page .home-hero > :not(.site-header):not(.site-search) {
+  display: none;
+}
+
+.is-search-empty.home-page .home-hero {
+  min-height: 100px;
+  height: 100px;
+  background: var(--color-white);
+}
+
+.is-search-empty .site-header--overlay {
+  position: relative;
+  inset: auto;
+  color: var(--color-charcoal);
+  background: var(--color-white);
+  border-bottom: 4px solid var(--color-border-soft);
+}
+
+.is-search-empty .site-header--overlay .header-search img {
+  filter: none;
+}
+
+@media (max-width: 768px) {
+  .search-empty-page {
+    min-height: 420px;
+    padding: 64px 20px 0;
+  }
+
+  .is-search-empty.home-page .home-hero {
+    min-height: 76px;
+    height: 76px;
+  }
+}
+
+.page-hero {
+  position: relative;
+  width: 100%;
+  margin-top: var(--space-7);
+  overflow: hidden;
+  border-radius: var(--radius-card);
+}
+
+.page-hero > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.page-hero--compact {
+  height: 480px;
+}
+
+.page-hero--article {
+  height: 700px;
+}
+
+.page-hero__caption {
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  height: 61px;
+  padding: 0 var(--space-5);
+}
+
+.article-page .page-hero__caption {
+  color: var(--color-charcoal);
+}
+
+.page-hero__caption h1 {
+  font-size: var(--font-h4);
+  font-weight: 700;
+  line-height: normal;
+}
+
+.page-hero__caption p {
+  font-size: var(--font-h5);
+  font-weight: 700;
+  line-height: normal;
+}
+
+.page-hero__caption--light {
+  color: var(--color-white);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.32);
+}
+
+.home-section,
+.page-section {
+  margin-top: var(--space-section);
+}
+
+.featured-categories,
+.products-categories {
+  height: 1009px;
+  padding-top: var(--space-7);
+  background: var(--color-warm-white);
+}
+
+.featured-categories__inner,
+.page-section__inner,
+.article-content-section__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+  align-items: center;
+}
+
+body > .site-footer {
+  margin-top: var(--space-section);
+}
+
+/* 首頁 */
+.home-page {
+  overflow-x: clip;
+}
+
+.home-hero {
+  position: relative;
+  height: 962px;
+}
+
+.home-hero__media {
+  position: relative;
+  width: 100%;
+  height: 920px;
+  overflow: hidden;
+  border-radius: var(--radius-card);
+}
+
+.home-hero__slide {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--motion-standard) var(--motion-ease);
+}
+
+.home-hero__slide.is-current {
+  z-index: 1;
+  opacity: 1;
+}
+
+.home-hero__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.home-hero__arrows {
+  position: absolute;
+  top: 400px;
+  right: 64px;
+  left: 64px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 120px;
+  pointer-events: none;
+}
+
+.home-hero__arrow {
+  display: grid;
+  width: 60px;
+  height: 120px;
+  padding: 0;
+  color: var(--color-white);
+  background: transparent;
+  cursor: pointer;
+  pointer-events: auto;
+  place-items: center;
+}
+
+.home-hero__arrow img {
+  width: 45px;
+  height: 108px;
+}
+
+.home-hero__arrow--right img {
+  transform: scaleX(-1);
+}
+
+.home-hero__pagination {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  display: flex;
+  gap: clamp(8px, 2.1645%, var(--space-5));
+  align-items: center;
+  justify-content: center;
+  width: min(924px, calc(100% - (2 * var(--page-gutter))));
+  height: 2px;
+  transform: translateX(-50%);
+}
+
+.home-hero__pagination-line {
+  position: relative;
+  contain: layout;
+  flex: 1 1 0;
+  width: auto;
+  min-width: 0;
+  height: 1.35px;
+  padding: 0;
+  background: transparent;
+}
+
+.home-hero__pagination-line::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 101.8519%;
+  height: 4px;
+  background: var(--color-light-wood);
+  border-radius: 999px;
+  content: "";
+  pointer-events: none;
+  transform: translate(-50%, -50%) rotate(0.36deg);
+}
+
+.home-hero__pagination-line::after {
+  position: absolute;
+  inset: calc(0px - var(--space-3)) 0;
+  content: "";
+}
+
+.home-hero__pagination-line:focus-visible {
+  outline: none;
+}
+
+.home-hero__pagination-line:focus-visible::after {
+  inset-inline: -4px;
+  border: 2px solid var(--color-light-wood);
+  border-radius: 2px;
+}
+
+.home-hero__pagination-line.is-current::before {
+  background: var(--color-charcoal);
+}
+
+.brand-story {
+  min-height: 500px;
+}
+
+.brand-story__card {
+  display: flex;
+  gap: var(--space-5);
+  align-items: center;
+  min-height: 500px;
+}
+
+.brand-story__media {
+  flex: 0 0 500px;
+  height: 500px;
+}
+
+.brand-story__content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-7);
+  align-items: center;
+  min-width: 0;
+  text-align: center;
+}
+
+.brand-story__title {
+  width: 100%;
+  padding: var(--space-1) var(--space-5);
+  font-size: var(--font-h2);
+  font-weight: 500;
+  line-height: normal;
+}
+
+.brand-story__copy {
+  width: 100%;
+  padding: var(--space-5);
+  font-size: 24px;
+  line-height: 44px;
+}
+
+.latest-journal {
+  height: 930px;
+}
+
+.latest-journal__feature {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+  align-items: center;
+  width: 928px;
+  margin-inline: auto;
+}
+
+.journal-feature-card {
+  width: 100%;
+  height: 419px;
+}
+
+.journal-feature-card .product-card__media {
+  height: 320px;
+}
+
+.journal-feature-card .product-card__content {
+  height: 91px;
+}
+
+.latest-journal__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-7);
+  width: 1120px;
+  height: 380px;
+  margin: var(--space-7) auto 0;
+}
+
+.journal-secondary-card {
+  height: 380px;
+}
+
+.journal-secondary-card .product-card__media {
+  height: 270px;
+}
+
+.journal-secondary-card .product-card__content {
+  height: 102px;
+}
+
+.featured-categories .section-heading {
+  line-height: 43px;
+}
+
+.featured-categories__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+  width: 100%;
+}
+
+.category-card {
+  overflow: visible;
+}
+
+.category-card :is(.product-card__subtitle, .product-card__description) {
+  overflow: clip;
+  overflow-clip-margin: 2px;
+}
+
+.category-card .product-card__subtitle {
+  line-height: 24px;
+}
+
+.category-card .product-card__description {
+  line-height: 22px;
+}
+
+/* 商品頁 */
+.products-feature-grid {
+  display: flex;
+  gap: 0;
+  align-items: flex-start;
+  justify-content: center;
+  width: min(var(--container-width), calc(100% - (2 * var(--page-gutter))));
+  margin-inline: auto;
+}
+
+.products-feature__column {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: var(--space-section);
+  align-items: center;
+  min-width: 0;
+}
+
+.products-feature__column--left {
+  padding-bottom: 200px;
+}
+
+.products-feature__column--right {
+  padding-top: 200px;
+}
+
+.product-card--featured {
+  width: 100%;
+  height: 589px;
+}
+
+.products-feature__column--left .product-card--featured:first-child {
+  height: 586px;
+}
+
+.product-card--featured .product-card__media {
+  height: 520px;
+}
+
+.product-card--featured .product-card__content {
+  height: 61px;
+}
+
+.product-card--featured-crop-bottom .product-card__media img {
+  object-position: center bottom;
+}
+
+.products-category-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 256px);
+  row-gap: var(--space-5);
+  column-gap: var(--space-6);
+  width: 1120px;
+}
+
+.product-card--category-compact {
+  width: 256px;
+}
+
+.product-card--category-compact .product-card__subtitle {
+  line-height: 20px;
+}
+
+.product-card--category-compact .product-card__description {
+  line-height: 18px;
+}
+
+.product-card--category-crop-right .product-card__media img {
+  object-position: right center;
+}
+
+/* 生活提案頁 */
+.journal-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-section);
+  width: 1120px;
+}
+
+.journal-lead-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 1120px;
+  height: 432px;
+}
+
+.journal-lead-card__media {
+  width: 100%;
+  height: 333px;
+}
+
+.journal-lead-card__content {
+  height: 91px;
+}
+
+.journal-split-card {
+  display: flex;
+  width: 1120px;
+  height: 360px;
+  align-items: flex-start;
+}
+
+.journal-split-card__media {
+  flex: 0 0 680px;
+  height: 360px;
+}
+
+.journal-split-card__content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 84px;
+  min-width: 0;
+  padding: var(--space-5);
+  overflow: hidden;
+}
+
+.journal-split-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  min-width: 0;
+  padding: var(--space-5);
+}
+
+.journal-split-card__title {
+  overflow: hidden;
+  font-size: var(--font-h3);
+  font-weight: 400;
+  line-height: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.journal-split-card__subtitle,
+.journal-split-card__description {
+  overflow: hidden;
+  font-size: var(--font-h4);
+  line-height: 24px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.journal-split-card__subtitle {
+  height: 24px;
+}
+
+.journal-split-card__description {
+  height: 48px;
+}
+
+.journal-split-card--reverse .journal-split-card__media {
+  order: 2;
+}
+
+/* 文章頁 */
+.article-body-card {
+  width: 100%;
+  padding: 100px 0;
+  overflow: hidden;
+  background: var(--color-warm-white);
+  border-radius: var(--radius-card);
+}
+
+.article-body-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  align-items: center;
+  padding: var(--space-5);
+  text-align: center;
+}
+
+.article-body-card__heading {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  width: 100%;
+}
+
+.article-body-card__heading h2 {
+  overflow: hidden;
+  font-size: var(--font-h1);
+  font-weight: 400;
+  line-height: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.article-body-card__heading p {
+  overflow: hidden;
+  font-size: var(--font-h3);
+  line-height: normal;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.article-body-card__copy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  width: 100%;
+  font-size: var(--font-h4);
+  line-height: 24px;
+}
+
+.article-body-card__copy p {
+  height: 24px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.article-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-6);
+  width: min(992px, 100%);
+  height: 280px;
+}
+
+.article-gallery__feature {
+  width: 100%;
+  height: 280px;
+}
+
+.article-gallery__stack {
+  display: grid;
+  grid-template-rows: repeat(2, 136px);
+  gap: 4px;
+  width: 100%;
+  height: 280px;
+}
+
+.article-gallery__crop {
+  position: relative;
+}
+
+.article-gallery__crop img {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  max-width: none;
+  object-fit: fill;
+}
+
+.article-gallery__crop--quiet-top img {
+  top: -126.54%;
+  height: 529.54%;
+}
+
+.article-gallery__crop--breathing-top img {
+  top: 0.02%;
+  height: 499.95%;
+}
+
+.article-gallery__crop--breathing-bottom img {
+  top: -101.51%;
+  height: 365.52%;
+}
+
+.related-products,
+.related-articles {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  background: var(--color-warm-white);
+}
+
+.related-products {
+  height: 617px;
+}
+
+.related-products__recommendations,
+.related-articles__recommendations {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-7);
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.related-products__recommendations {
+  height: 560px;
+}
+
+.related-products__heading {
+  width: 261px;
+}
+
+.related-products__grid,
+.related-articles__grid {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+.related-products__grid {
+  gap: var(--space-5);
+}
+
+.related-product-card {
+  flex: 1 0 0;
+  min-width: 280px;
+}
+
+.related-products__read-more-row,
+.related-articles__read-more-row {
+  display: flex;
+  justify-content: flex-end;
+  height: 37px;
+}
+
+.related-articles {
+  height: 436px;
+}
+
+.related-articles__recommendations {
+  height: 379px;
+}
+
+.related-articles__heading {
+  width: 184px;
+}
+
+.related-articles__grid {
+  gap: var(--space-7);
+  padding-block: 2px;
+}
+
+.related-article-card {
+  display: flex;
+  flex: 1 0 0;
+  height: 244px;
+  align-items: center;
+  justify-content: center;
+}
+
+.related-article-card__media {
+  flex: 0 0 280px;
+  height: 244px;
+}
+
+.related-article-card__content {
+  flex: 0 0 260px;
+  height: 98px;
+  min-width: 0;
+}
+
+.related-article-card .product-card__subtitle {
+  flex-shrink: 0;
+  overflow: visible;
+  line-height: 24px;
+}
+
+.related-article-card .product-card__description {
+  flex-shrink: 0;
+  height: 66px;
+  overflow: visible;
+  line-height: 22px;
+  white-space: normal;
+}
+
+.related-article-card__media--writing {
+  position: relative;
+}
+
+.related-article-card__media--writing img {
+  position: absolute;
+  top: -104.05%;
+  left: 0;
+  width: 100%;
+  height: 204.01%;
+  max-width: none;
+  object-fit: fill;
+}
+
+/* 響應式版型 */
+@media (max-width: 1200px) {
+  /* 首頁 */
+  .home-hero__arrows {
+    right: var(--space-6);
+    left: var(--space-6);
+  }
+
+  .latest-journal__feature {
+    width: min(928px, calc(100% - (2 * var(--page-gutter))));
+  }
+
+  .latest-journal__grid {
+    width: calc(100% - (2 * var(--page-gutter)));
+  }
+
+  /* 商品頁 */
+  .products-category-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: var(--space-5);
+    width: 100%;
+  }
+
+  .product-card--featured,
+  .product-card--category-compact {
+    width: 100%;
+  }
+
+  /* 生活提案頁 */
+  .journal-list,
+  .journal-lead-card,
+  .journal-split-card {
+    width: 100%;
+  }
+
+  .journal-split-card__media {
+    flex-basis: 60%;
+  }
+
+  /* 文章頁 */
+  .article-gallery {
+    width: min(992px, 100%);
+  }
+
+  .related-articles {
+    height: auto;
+    padding-block: var(--space-7);
+  }
+
+  .related-articles__recommendations {
+    height: auto;
+    justify-content: flex-start;
+  }
+
+  .related-articles__grid {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .related-article-card {
+    flex: none;
+    width: min(540px, 100%);
+  }
+}
+
+@media (max-width: 992px) {
+  /* 共用頁面版型 */
+  .page-hero {
+    margin-top: var(--space-6);
+  }
+
+  .page-hero--compact {
+    height: 420px;
+  }
+
+  /* 首頁 */
+  .brand-story,
+  .latest-journal,
+  .featured-categories {
+    height: auto;
+  }
+
+  .brand-story__card {
+    flex-direction: column;
+    height: auto;
+    min-height: 0;
+  }
+
+  .brand-story__media {
+    flex-basis: auto;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 1 / 1;
+  }
+
+  .brand-story__content {
+    padding-block: var(--space-7);
+  }
+
+  .latest-journal__grid,
+  .featured-categories__grid {
+    width: 100%;
+  }
+
+  .latest-journal__grid {
+    height: auto;
+    padding-inline: var(--page-gutter);
+  }
+
+  .featured-categories {
+    padding-bottom: var(--space-7);
+  }
+
+  /* 商品頁 */
+  .products-category-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .products-categories {
+    height: auto;
+    padding-bottom: var(--space-7);
+  }
+
+  /* 生活提案頁 */
+  .journal-list {
+    gap: 80px;
+  }
+
+  .journal-lead-card,
+  .journal-split-card {
+    height: auto;
+  }
+
+  .journal-lead-card__media,
+  .journal-split-card__media {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
+
+  .journal-split-card {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .journal-split-card__media {
+    flex-basis: auto;
+  }
+
+  .journal-split-card--reverse .journal-split-card__media {
+    order: 0;
+  }
+
+  .journal-split-card__content {
+    gap: var(--space-6);
+  }
+
+  /* 文章頁 */
+  .page-hero--article {
+    height: 560px;
+  }
+
+  .article-body-card {
+    padding: 72px 0;
+  }
+
+  .article-body-card__heading h2,
+  .article-body-card__heading p,
+  .article-body-card__copy p {
+    height: auto;
+    white-space: normal;
+  }
+
+  .article-gallery {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+
+  .article-gallery__feature {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 12 / 7;
+  }
+
+  .article-gallery__stack {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: none;
+    width: 100%;
+    height: auto;
+  }
+
+  .article-gallery__stack .media {
+    aspect-ratio: 16 / 9;
+  }
+
+  .article-gallery__crop img {
+    position: static;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .related-products {
+    height: auto;
+    padding-block: var(--space-7);
+  }
+
+  .related-products__recommendations {
+    height: auto;
+    justify-content: flex-start;
+  }
+
+  .related-products__grid {
+    flex-wrap: wrap;
+  }
+
+  .related-product-card {
+    flex: 1 1 calc(50% - 10px);
+    max-width: none;
+  }
+}
+
+@media (max-width: 768px) {
+  /* 首頁 */
+  .home-hero {
+    height: 682px;
+  }
+
+  .home-hero__media {
+    height: 640px;
+  }
+
+  .home-hero__arrows {
+    top: 260px;
+    right: var(--space-4);
+    left: var(--space-4);
+  }
+
+  .home-hero__arrow {
+    width: 40px;
+    height: 80px;
+  }
+
+  .home-hero__arrow img {
+    width: 30px;
+    height: 72px;
+  }
+
+  .latest-journal__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .featured-categories__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 576px) {
+  /* 共用頁面版型 */
+  .page-hero {
+    margin-top: var(--space-5);
+  }
+
+  .page-hero--compact {
+    height: 360px;
+  }
+
+  /* 首頁 */
+  .home-hero {
+    height: 522px;
+  }
+
+  .home-hero__media {
+    height: 480px;
+  }
+
+  .home-hero__arrows {
+    top: 200px;
+  }
+
+  .brand-story__title {
+    font-size: 28px;
+  }
+
+  .brand-story__copy {
+    font-size: 20px;
+    line-height: 1.8;
+  }
+
+  .latest-journal__feature,
+  .latest-journal__grid {
+    width: 100%;
+    padding-inline: var(--page-gutter);
+  }
+
+  .journal-feature-card,
+  .journal-secondary-card {
+    height: auto;
+  }
+
+  .journal-feature-card .product-card__media,
+  .journal-secondary-card .product-card__media {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .journal-feature-card .product-card__content,
+  .journal-secondary-card .product-card__content {
+    height: auto;
+    min-height: 61px;
+  }
+
+  .featured-categories__grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* 商品頁 */
+  .products-feature-grid {
+    flex-direction: column;
+    gap: var(--space-7);
+  }
+
+  .products-feature__column {
+    width: 100%;
+    gap: var(--space-7);
+    padding: 0;
+  }
+
+  .products-category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .product-card--featured {
+    height: auto;
+  }
+
+  .product-card--featured .product-card__media {
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  /* 文章頁 */
+  .page-hero--article {
+    height: 440px;
+  }
+
+  .article-body-card {
+    padding: var(--space-8) 0;
+  }
+
+  .article-body-card__heading {
+    gap: var(--space-6);
+  }
+
+  .article-gallery__stack {
+    grid-template-columns: 1fr;
+  }
+
+  .related-product-card {
+    flex-basis: 100%;
+    min-width: 0;
+  }
+
+  .related-article-card {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .related-article-card__media {
+    flex-basis: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 3;
+  }
+
+  .related-article-card__content {
+    flex-basis: auto;
+    width: 100%;
+    height: auto;
+    min-height: 98px;
+  }
+
+  .related-article-card__media--writing img {
+    position: static;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}

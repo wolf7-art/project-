@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="以器物、香氣與生活提案，收藏日常裡值得慢慢感受的片刻。">
+    <title>生活選物｜首頁</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <script src="js/main.js" defer></script>
+  </head>
+  <body class="home-page" data-page="home">
+    <main>
+      <!-- 首頁主視覺與輪播 -->
+      <section class="home-hero" aria-label="首頁主視覺" aria-roledescription="輪播圖" data-carousel>
+        <div class="home-hero__media" aria-live="polite">
+          <div class="home-hero__slide is-current" id="home-hero-slide-1" role="group" aria-label="第 1 張，共 4 張" aria-hidden="false" data-carousel-slide>
+            <img src="assets/images/home/home-hero.jpg" alt="落地窗外的綠意庭院與室內木質家具">
+          </div>
+          <div class="home-hero__slide" id="home-hero-slide-2" role="group" aria-label="第 2 張，共 4 張" aria-hidden="true" data-carousel-slide>
+            <img src="assets/images/home/home-hero.jpg" alt="落地窗外的綠意庭院與室內木質家具">
+          </div>
+          <div class="home-hero__slide" id="home-hero-slide-3" role="group" aria-label="第 3 張，共 4 張" aria-hidden="true" data-carousel-slide>
+            <img src="assets/images/home/home-hero.jpg" alt="落地窗外的綠意庭院與室內木質家具">
+          </div>
+          <div class="home-hero__slide" id="home-hero-slide-4" role="group" aria-label="第 4 張，共 4 張" aria-hidden="true" data-carousel-slide>
+            <img src="assets/images/home/home-hero.jpg" alt="落地窗外的綠意庭院與室內木質家具">
+          </div>
+        </div>
+
+        <!-- 首頁透明頁首 -->
+        <header class="site-header site-header--overlay">
+          <div class="site-header__inner">
+            <a class="site-logo" href="index.html" aria-label="返回首頁">LOGO</a>
+
+            <nav class="primary-navigation" id="primary-navigation" aria-label="主要導覽">
+              <ul class="primary-navigation__list">
+                <li><a class="primary-navigation__link" href="index.html" aria-current="page">Home</a></li>
+                <li><a class="primary-navigation__link" href="products.html">Product Gallery</a></li>
+                <li><a class="primary-navigation__link" href="journal.html">Journal List</a></li>
+                <li><a class="primary-navigation__link" href="article.html">Article Detail</a></li>
+              </ul>
+            </nav>
+
+            <button
+              class="header-search"
+              type="button"
+              aria-controls="site-search-panel"
+              aria-expanded="false"
+              data-search-toggle
+            >
+              <img src="assets/icons/search.svg" alt="">
+              <span>Search</span>
+            </button>
+
+            <button
+              class="mobile-menu-toggle"
+              type="button"
+              aria-label="開啟導覽選單"
+              aria-controls="primary-navigation"
+              aria-expanded="false"
+              data-menu-toggle
+            >
+              <span class="mobile-menu-toggle__line"></span>
+              <span class="mobile-menu-toggle__line"></span>
+              <span class="mobile-menu-toggle__line"></span>
+            </button>
+          </div>
+        </header>
+
+        <!-- 站內搜尋面板 -->
+        <form class="site-search" id="site-search-panel" role="search" aria-label="站內搜尋" data-search-form hidden>
+          <div class="site-search__header">
+            <h2 class="site-search__title">搜尋生活選物</h2>
+            <button class="site-search__close" type="button" aria-label="關閉搜尋" data-search-close>×</button>
+          </div>
+          <label class="site-search__label" for="site-search-input">輸入關鍵字</label>
+          <input
+            class="site-search__input"
+            id="site-search-input"
+            type="search"
+            placeholder="例如：香氛、茶器、書寫"
+            autocomplete="off"
+            data-search-input
+          >
+          <p class="site-search__summary" aria-live="polite" data-search-summary>可搜尋 0 項內容</p>
+        </form>
+
+        <div class="home-hero__arrows">
+          <button class="home-hero__arrow" type="button" aria-label="上一張" data-carousel-previous>
+            <img src="assets/icons/arrow-left.svg" alt="">
+          </button>
+          <button class="home-hero__arrow home-hero__arrow--right" type="button" aria-label="下一張" data-carousel-next>
+            <img src="assets/icons/arrow-right.svg" alt="">
+          </button>
+        </div>
+
+        <div class="home-hero__pagination" role="group" aria-label="選擇主視覺圖片">
+          <button class="home-hero__pagination-line is-current" type="button" aria-label="切換至第 1 張" aria-controls="home-hero-slide-1" aria-pressed="true" data-carousel-indicator></button>
+          <button class="home-hero__pagination-line" type="button" aria-label="切換至第 2 張" aria-controls="home-hero-slide-2" aria-pressed="false" data-carousel-indicator></button>
+          <button class="home-hero__pagination-line" type="button" aria-label="切換至第 3 張" aria-controls="home-hero-slide-3" aria-pressed="false" data-carousel-indicator></button>
+          <button class="home-hero__pagination-line" type="button" aria-label="切換至第 4 張" aria-controls="home-hero-slide-4" aria-pressed="false" data-carousel-indicator></button>
+        </div>
+      </section>
+
+      <!-- 搜尋沒有符合內容時顯示完整空結果狀態。 -->
+      <section class="search-empty-page" aria-labelledby="site-search-empty-title" data-search-empty-page hidden>
+        <div class="search-empty-page__content">
+          <h1 class="search-empty-page__title" id="site-search-empty-title">找不到符合條件的選物</h1>
+          <p>試著調整搜尋關鍵字，或瀏覽其他生活提案。</p>
+        </div>
+      </section>
+
+      <!-- 品牌故事 -->
+      <section class="home-section brand-story" aria-labelledby="brand-story-title">
+        <div class="container brand-story__card article-card article-card--interactive" data-search-item>
+          <div class="brand-story__media media">
+            <img src="assets/images/home/home-brand-story.jpg" alt="陽光照進木質空間，窗外可見田野景色">
+          </div>
+          <div class="brand-story__content">
+            <h1 class="brand-story__title" id="brand-story-title">在匆忙的日子裡，留給生活一段空白</h1>
+            <div class="brand-story__copy">
+              <p>器物不只是物件，而是日常溫度的載體。</p>
+              <p>一只餐碟、一支鋼筆、或是一抹香氛，</p>
+              <p>這些微小的細節，能讓被忽略的小事重新發光。</p>
+              <p>不追求繁複，只為了在剛好的時刻，</p>
+              <p>與最合適的陪伴相遇。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 最新生活提案 -->
+      <section class="home-section latest-journal" aria-labelledby="latest-journal-title">
+        <div class="latest-journal__feature">
+          <h2 class="section-heading" id="latest-journal-title">最新生活提案</h2>
+          <a class="product-card journal-feature-card" href="article.html" data-search-item>
+            <div class="product-card__media media">
+              <img src="assets/images/home/home-journal-feature.jpg" alt="白色桌面上的香氛瓶與燭光">
+            </div>
+            <div class="product-card__content">
+              <h3 class="product-card__title">【靜謐】用香氣劃定家的邊界</h3>
+              <p class="product-card__subtitle">尋找專屬於你的「回巢感」，讓疲憊在吐納間消散。</p>
+              <p class="product-card__description">不同層次的木質調與草本香，能為空間賦予靈魂。探索如何透過天然香氛，打造一個能讓心靈著陸的角落。</p>
+            </div>
+          </a>
+        </div>
+
+        <div class="latest-journal__grid">
+          <a class="product-card journal-secondary-card" href="article.html" data-search-item>
+            <div class="product-card__media media">
+              <img src="assets/images/home/home-journal-table.jpg" alt="暖色餐桌上的陶製餐盤與杯具">
+            </div>
+            <div class="product-card__content">
+              <h3 class="product-card__title">【食之器】秋日餐桌的色澤練習</h3>
+              <p class="product-card__subtitle">挑選一只溫潤的陶盤，盛裝屬於這個季節的旬味。</p>
+              <p class="product-card__description">當光影灑落在帶有手作紋理的器皿上，晚餐不再只是進食，而是一場感官的洗滌。</p>
+            </div>
+          </a>
+
+          <a class="product-card journal-secondary-card" href="article.html" data-search-item>
+            <div class="product-card__media media">
+              <img src="assets/images/home/home-journal-writing.jpg" alt="日光下的筆記本、彩色筆與玻璃茶壺">
+            </div>
+            <div class="product-card__content">
+              <h3 class="product-card__title">【拾筆】書寫，是與自己最誠實的對話</h3>
+              <p class="product-card__subtitle">在數位時代裡，重新感受紙筆磨擦的真實觸感。</p>
+              <p class="product-card__description">靜下心來，讓思緒隨著墨水流動。精選五款適合深夜紀錄心事的職人鋼筆，找回消失已久的專注。</p>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- 精選商品分類 -->
+      <section class="home-section featured-categories" aria-labelledby="featured-categories-title">
+        <div class="container featured-categories__inner">
+          <h2 class="section-heading" id="featured-categories-title">精選商品類別</h2>
+
+          <div class="featured-categories__grid">
+            <a class="product-card product-card--compact category-card" href="products.html" data-search-item>
+              <div class="product-card__media media">
+                <img src="assets/images/home/home-category-writing.jpg" alt="白紙、木質鋼筆與墨水">
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-card__subtitle">【書寫之間】留給自己一頁安靜時光</h3>
+                <p class="product-card__description">一支筆、一張紙，在緩慢書寫的過程裡，重新整理思緒與日常節奏，讓平凡的日子多一份沉澱。</p>
+              </div>
+            </a>
+
+            <a class="product-card product-card--compact category-card" href="products.html" data-search-item>
+              <div class="product-card__media media">
+                <img src="assets/images/home/home-category-tableware.jpg" alt="暖色餐桌上的手作食器">
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-card__subtitle">【食器之美】細節裡的生活品味</h3>
+                <p class="product-card__description">從材質、手感到色彩搭配，每一件食器都展現對生活細節的溫柔講究。</p>
+              </div>
+            </a>
+
+            <a class="product-card product-card--compact category-card" href="products.html" data-search-item>
+              <div class="product-card__media media">
+                <img src="assets/images/home/home-category-fragrance.jpg" alt="燭光、花器與居家香氛">
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-card__subtitle">【一室微香】讓空間慢慢安靜下來</h3>
+                <p class="product-card__description">淡雅的木質與草本香氣，輕輕填滿生活角落，為忙碌的日常保留片刻餘裕。</p>
+              </div>
+            </a>
+
+            <a class="product-card product-card--compact category-card" href="products.html" data-search-item>
+              <div class="product-card__media media">
+                <img src="assets/images/home/home-category-storage.jpg" alt="明亮整齊的木質居家空間">
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-card__subtitle">【日常收納】把喜歡的事物留在視線裡</h3>
+                <p class="product-card__description">透過簡潔而實用的收納器具，讓生活回歸秩序，也讓每件物品都有自己的位置。</p>
+              </div>
+            </a>
+
+            <a class="product-card product-card--compact category-card" href="products.html" data-search-item>
+              <div class="product-card__media media">
+                <img src="assets/images/home/home-category-tea.jpg" alt="手沖茶注入透明玻璃茶杯">
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-card__subtitle">【一杯之間】為生活預留空白</h3>
+                <p class="product-card__description">沖泡一壺茶的時間，是與自己相處的片刻。讓溫潤器皿陪伴每個緩慢而美好的日常。</p>
+              </div>
+            </a>
+
+            <a class="product-card product-card--compact category-card" href="products.html" data-search-item>
+              <div class="product-card__media media">
+                <img src="assets/images/home/home-category-seasons.jpg" alt="陽光窗邊的麵包、水果與餐桌風景">
+              </div>
+              <div class="product-card__content">
+                <h3 class="product-card__subtitle">【四季風景】收藏當下的生活溫度</h3>
+                <p class="product-card__description">隨著季節更迭挑選適合的器物與香氣，將自然的節奏融入居家日常，感受時間流動的美好。</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- 全站頁尾 -->
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <div class="site-footer__brand">
+          <a class="site-footer__logo" href="index.html" aria-label="返回首頁">LOGO</a>
+          <div class="site-footer__socials">
+            <a class="site-footer__social-link" href="#" aria-label="Facebook">
+              <img src="assets/icons/facebook.png" alt="">
+            </a>
+            <a class="site-footer__social-link" href="#" aria-label="Instagram">
+              <img src="assets/icons/instagram.png" alt="">
+            </a>
+            <a class="site-footer__social-link" href="#" aria-label="LINE">
+              <img src="assets/icons/line.png" alt="">
+            </a>
+          </div>
+        </div>
+
+        <nav class="site-footer__links" aria-label="頁尾資訊">
+          <div class="site-footer__column">
+            <a class="site-footer__link" href="#brand-story-title">關於我們</a>
+            <a class="site-footer__link" href="journal.html">生活提案</a>
+            <a class="site-footer__link" href="mailto:hello@example.com">聯繫我們</a>
+          </div>
+          <div class="site-footer__column">
+            <a class="site-footer__link" href="journal.html">最新消息</a>
+            <a class="site-footer__link" href="journal.html">活動特集</a>
+            <a class="site-footer__link" href="products.html">購物說明</a>
+          </div>
+          <div class="site-footer__column">
+            <a class="site-footer__link" href="index.html">加入會員</a>
+            <a class="site-footer__link" href="index.html">會員權益</a>
+            <a class="site-footer__link" href="index.html">常見問題</a>
+          </div>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
